@@ -1,0 +1,42 @@
+/* Reset */
+/* 
+ Les navigateurs ont des styles par défaut qu'il faut retirer (tu peux regarder ce que ça fait sans ça) 
+ Le selecteur * correspond à tous les élément
+*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+	/*
+	Dans :root tu peux créer des "variables", c'est à dire queleque chose que tu vas appeler dans ton code
+	et qui a pour valeur ce que tu lui définis (une couleur, une police, une taille, etc.)
+	*/
+	--navbar-color: #E4DFD7;
+}
+
+/* Navbar */
+.navbar {
+	width: 100%;
+	height: 125px;
+	display: flex;
+	justify-content: space-around;
+	/* 
+	Pour appeler les varaibles créées dans :root il faut utiliser var()
+		- var(nomvariable);
+	Ci-dessous, le background-color aura donc la valeur de la variable --navbar-color
+	*/
+	background-color: var(--navbar-color);
+}
+
+.navbar .navbar_title {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+}

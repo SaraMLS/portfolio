@@ -1,0 +1,1 @@
+**Ce dossier contient les images utilisées sur le site**
