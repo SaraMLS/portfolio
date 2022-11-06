@@ -7,6 +7,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 /* Variables */
@@ -49,22 +50,43 @@
 	font-size: small;	
 }
 
-main .profil img {
+main .home img {
 	width: 250px;
 	height: 250px;
 	max-width: 300px;
 	max-height: 300px;
 }
 
-main .profil span {
+main .home span {
 	font-family: var(--title);
 	font-size: 80px;
 }
 
-main .profil {
+main .home {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin-top: 45px;
+	margin-top: 80px;
+}
+
+section {
+	margin-top: 50px;
+	height: 500px;
+	margin-bottom: 50px;
+}
+
+#profil .me {
+	max-width: 500px;
+	max-height: 500px;
+	font-family: var(--badscript);
+	font-weight: bold;
+	line-height: 1.7;
+	text-align: justify;
+}
+
+#profil {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
