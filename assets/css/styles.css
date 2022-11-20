@@ -34,13 +34,16 @@
   font-size: 17px;
 }
 
+main, section {
+	margin-top: 250px;
+}
+
 /* home */
 main .home {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 80px;
 }
 /* img profil */
 main .home img {
@@ -59,13 +62,12 @@ main .home span {
 
 /* sections */
 section {
-  margin-top: 50px;
-  min-height: 500px;
-  margin-bottom: 50px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+	margin-right: 16px;
+	margin-left: 16px;
 }
 
 /* titles */
@@ -95,7 +97,8 @@ button {
 /* description */
 #profil .me {
   max-width: 600px;
-  max-height: 600px;
+  max-height: 300px;
+  height: auto;
   font-family: var(--badscript);
   font-weight: bold;
   font-size: 19px;
@@ -107,7 +110,6 @@ button {
 
 #skills .container {
   max-width: 900px;
-  max-height: 600px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -153,8 +155,7 @@ button {
 /* container xp */
 #xp .page {
   max-width: 1200px;
-  max-height: 600px;
-  display: flex;
+	display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
