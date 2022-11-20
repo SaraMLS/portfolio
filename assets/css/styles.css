@@ -1,92 +1,268 @@
-/* Reset */
-/* 
- Les navigateurs ont des styles par défaut qu'il faut retirer (tu peux regarder ce que ça fait sans ça) 
- Le selecteur * correspond à tous les élément
-*/
+/* reset */
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-/* Variables */
+/* var */
 :root {
-	/*
-	Dans :root tu peux créer des "variables", c'est à dire queleque chose que tu vas appeler dans ton code
-	et qui a pour valeur ce que tu lui définis (une couleur, une police, une taille, etc.)
-	*/
-	--grey: #E4DFD7;
-	--beige: #F0DDC5;
-	--black: #000;
-	--badscript: 'Bad Script', cursive;
-	--title: 'Mrs Saint Delafield', cursive;
+  --grey: #e4dfd7;
+  --beige: #f0ddc5;
+  --black: #000;
+  --badscript: "Bad Script", cursive;
+  --title: "Mrs Saint Delafield", cursive;
 }
 
-/* Navbar */
-.navbar {	
-	width: 100%;
-	height: 60px;
-	background-color: var(--grey);
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-
-	/* 
-	Pour appeler les varaibles créées dans :root il faut utiliser var()
-		- var(nomvariable);
-	Ci-dessous, le background-color aura donc la valeur de la variable --navbar-color
-	*/
+/* navbar */
+.navbar {
+  width: 100%;
+  height: 60px;
+  background-color: var(--grey);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.navbar .navbar_title a {	
-	/* On dit que c'est en display flex pour pouvoir utiliser les attributs flexbox (flex-direction etc...) */
-
-	text-transform: uppercase;
-	text-decoration: none;
-	color: var(--black);
-	font-family: var(--badscript);
-	font-weight: bold;
-	font-size: small;	
+.navbar .navbar_title a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--black);
+  font-family: var(--badscript);
+  font-weight: bold;
+  font-size: 17px;
 }
 
+/* home */
+main .home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+}
+/* img profil */
 main .home img {
-	width: 250px;
-	height: 250px;
-	max-width: 300px;
-	max-height: 300px;
+  width: 280px;
+  height: 280px;
+  max-width: 320px;
+  max-height: 320px;
 }
 
 main .home span {
-	font-family: var(--title);
-	font-size: 80px;
+  font-family: var(--title);
+  font-size: 80px;
 }
 
-main .home {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	margin-top: 80px;
-}
+/* general */
 
+/* sections */
 section {
-	margin-top: 50px;
-	height: 500px;
-	margin-bottom: 50px;
+  margin-top: 50px;
+  min-height: 500px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
+/* titles */
+
+section .title-section {
+  margin-bottom: 50px;
+}
+
+section .title-section span {
+  font-family: var(--badscript);
+  font-weight: bold;
+  line-height: 1.8;
+  font-size: 25px;
+  text-align: justify;
+  text-decoration: underline;
+}
+
+/* buttons */
+button {
+  outline: none !important;
+  border: none;
+  background: 0 0;
+}
+
+/* PROFIL - SECTION 1 */
+
+/* description */
 #profil .me {
-	max-width: 600px;
-	max-height: 500px;
-	font-family: var(--badscript);
-	font-weight: bold;
-	line-height: 1.7;
-	text-align: justify;
+  max-width: 600px;
+  max-height: 600px;
+  font-family: var(--badscript);
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 1.8;
+  text-align: justify;
 }
 
-#profil {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+/* SKILLS - SECTION 2 */
+
+#skills .container {
+  max-width: 900px;
+  max-height: 600px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 70px;
+}
+
+/* cards */
+#skills .card {
+  width: 200px;
+  height: 250px;
+  background-color: var(--grey);
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* title cards */
+#skills .container .card .title-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#skills .container .card .title-card span {
+  font-family: var(--badscript);
+  font-weight: bold;
+  font-size: 19px;
+}
+
+/* img cards */
+#skills .container .card .logo-card {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* XP - SECTION 3 */
+
+/* container xp */
+#xp .page {
+  max-width: 1200px;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0px;
+}
+
+/* box xp */
+#xp .page .box {
+  display: flex;
+  width: 100%;
+}
+
+/* font style */
+#xp .page .box .box1 {
+  font-size: 19px;
+  font-family: var(--badscript);
+}
+
+/* box/box */
+#xp .page .box .box1,
+#xp .page .box .box3 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+#xp .page .box .box2 {
+  flex: 0.25;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#xp .page .box .box2 .line {
+  width: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+/* box isolation */
+#xp .page .box:nth-child(even) {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* text box align */
+#xp .page .box:nth-child(odd) .box1 {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: end;
+}
+
+/* CONTACT - SECTION 4 */
+
+#contact .container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* img msg */
+#contact .container .img {
+}
+
+/* box */
+#contact .container .box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* input */
+#contact .container .box div input,
+#contact .container .box div textarea {
+  width: 100%;
+  padding: 10px;
+}
+
+/* button */
+#contact .container .box .button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#contact .container .box .button .contact1-form-btn {
+  min-width: 120px;
+  height: 40px;
+  width: 50px;
+  border-radius: 25px;
+  background: var(--beige);
+  font-family: var(--badscript);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  transition: all 0.4s;
+}
+
+#contact .container .box .button .contact1-form-btn img {
+  margin-left: 3px;
+}
+
+/* button cursor */
+#contact .container .box .button .contact1-form-btn:hover {
+  cursor: pointer;
 }
