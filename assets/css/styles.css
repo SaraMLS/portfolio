@@ -8,7 +8,6 @@
 
 /* VAR */
 :root {
-
   /* colors */
   --grey: #e4dfd7;
   --beige: #f0ddc5;
@@ -19,12 +18,23 @@
   --dark-green : #d7d4c7;
   --black-green : rgb(43 63 61); 
 
+  --profil-img-size: 450px;
+
   /* font-style */
   --text: "Roboto Mono", monospace;
   --title: "Mrs Saint Delafield", cursive;
+  --sara: 'Fleur De Leah', cursive;
 }
 
-/* NAVBAR */
+body#home {
+  background: center / cover no-repeat url("/assets/img/home-background.svg");
+}
+
+body#profil {
+  background: center / cover no-repeat url("/assets/img/profil-background.svg");
+}
+
+/* NAVBAR */  
 .navbar {
   /* size */
   width: 100%;
@@ -80,18 +90,19 @@ main .home {
 }
 /* img profil */
 main .home img {
-  width: 380px;
-  height: 380px;
-  max-width: 380px;
-  max-height: 380px;
+  width: var(--profil-img-size);
+  height: var(--profil-img-size);
+  max-width: var(--profil-img-size);
+  max-height: var(--profil-img-size);
   border-radius: 90%;
 }
 
 /* name */
 main .home span {
-  font-family: var(--title);
-  color: var(--black-green);
-  font-size: 100px;
+  font-family: var(--sara); 
+  font-weight: 400;
+  color: var(--black);
+  font-size: 150px;
 }
 
 /* GENERAL */
