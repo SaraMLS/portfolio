@@ -81,24 +81,33 @@ section {
   margin-top: 200px;
 }
 
-/* HOME */
+/* HOME
 main .home {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+} */
+
+/* home */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
 /* img profil */
 main .home img {
   width: var(--profil-img-size);
   height: var(--profil-img-size);
   max-width: var(--profil-img-size);
   max-height: var(--profil-img-size);
-  border-radius: 90%;
+  /* border-radius: 90%; */
 }
 
 /* name */
-main .home span {
+main .name {
   font-family: var(--sara); 
   font-weight: 400;
   color: var(--black);
