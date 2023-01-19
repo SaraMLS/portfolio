@@ -40,13 +40,13 @@ body {
 
 /* BG */
 body#homeBG {
-  background: center / cover no-repeat url("/assets/img/home-background.svg");
+  background: center / cover no-repeat url("../img/home-background.svg");
 }
 body#profilBG {
-  background: center / cover no-repeat url("/assets/img/profil-background.svg");
+  background: center / cover no-repeat url("../img/profil-background.svg");
 }
 body#contactBG {
-  background: center / cover no-repeat url("/assets/img/contact-background.svg");
+  background: center / cover no-repeat url("../img/contact-background.svg");
 }
 
 /* NAVBAR */
