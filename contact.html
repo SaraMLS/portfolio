@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<!-- HEAD -->
+  <!-- HEAD -->
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,7 +11,7 @@
     <link rel="stylesheet" href="./assets/css/responsive.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
+
     <!-- FONTS -->
     <link
       href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Roboto+Mono:wght@100;300;400&display=swap"
@@ -22,12 +21,14 @@
       href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
-  <!-- PROFIL PAGE -->
-  <body id="profilBG">
-
+  <!-- CONTACT PAGE -->
+  <body id="contactBG">
     <!-- NAVBAR -->
     <nav class="navbar">
       <div class="box">
@@ -43,27 +44,38 @@
         <div class="navbar_title">
           <a href="profil.html">profil</a>
         </div>
-          <div class="navbar_title">
+        <div class="navbar_title">
           <a href="contact.html">contact</a>
         </div>
       </div>
     </nav>
 
-    <!-- PROFIL -->
-    <!-- SKILLS -->
-    <div id="skills" class="first-element">
-      
-      <h2>Compétences</h2>
-      <img src="./assets/img/skills/skills.svg" alt="Compétences">
+    <!-- CONTACT -->
+    <div id="contact" class="first-element end">
+      <h2>Contact</h2>
+
+      <div class="box">
+        <div class="name" data-validate="Name is required">
+          <input class="input1" type="text" name="name" placeholder="Nom" />
+        </div>
+
+        <div class="email" data-validate="Valid email is required: ex@abc.xyz">
+          <input class="input1" type="text" name="email" placeholder="Email" /></div>
+
+          <div class="text" data-validate="Message is required">
+            <input
+              class="input1"
+              type="text"
+              name="text"
+              placeholder="Message"
+            />
+          </div>
+
+          <div class="button">
+            <button class="contact1-form-btn">Envoyer</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- XP -->
-    <div id="xp" class="end">
-      <h2>Expériences</h2>
-      <div><span></span><p>SEPT. 2021 – AUJOURD'HUI : BTS Gestion de la PME</p></div>        
-      <div><span></span><p>2021 – AUJOURD’HUI : Assistante de gestion</p></div>
-      <div><span></span><p>JUIL. 2021 - AOUT 2021 : Animatrice en centre de loisirs</p></div> 
-      <div><span></span><p>SEPT. 2019 - JUIL. 2021 : BAC STMG RH</p></div>
-    </div>
-   
   </body>
 </html>

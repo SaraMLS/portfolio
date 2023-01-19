@@ -12,35 +12,50 @@
   --grey: #e4dfd7;
   --beige: #f0ddc5;
   --black: #000;
-  --pink : #fce4d6;
-  --dark-pink : rgb(213 151 138);
-  --green : #f5f5ef;
-  --dark-green : #d7d4c7;
-  --black-green : rgb(43 63 61); 
-
-  --profil-img-size: 450px;
-
-  /* font-style */
+  --pink: #f2d4bc;
+  --fushia: #ef447b;
+  --dark-pink: rgb(213 151 138);
+  --green: #f5f5ef;
+  --dark-green: #d7d4c7;
+  --black-green: rgb(43 63 61);
+  /* size */
+  --profil-img-size: 500px;
+  /* font */
   --text: "Roboto Mono", monospace;
+  --text2: "Rajdhani", sans-serif;
   --title: "Mrs Saint Delafield", cursive;
-  --sara: 'Fleur De Leah', cursive;
+  --sara: "Fleur De Leah", cursive;
+}
+/* margin */
+.first-element {
+  margin-top: 200px;
+}
+.end {
+  margin-bottom: 200px;
 }
 
-body#home {
+body {
+  font-family: var(--text2);
+}
+
+/* BG */
+body#homeBG {
   background: center / cover no-repeat url("/assets/img/home-background.svg");
 }
-
-body#profil {
+body#profilBG {
   background: center / cover no-repeat url("/assets/img/profil-background.svg");
 }
+body#contactBG {
+  background: center / cover no-repeat url("/assets/img/contact-background.svg");
+}
 
-/* NAVBAR */  
+/* NAVBAR */
 .navbar {
   /* size */
   width: 100%;
   height: 70px;
   /* bg */
-  background-color: var(--dark-pink);
+  background-color: var(--pink);
   /* position */
   display: flex;
   align-items: center;
@@ -50,9 +65,9 @@ body#profil {
 }
 
 /* box */
-.navbar .box{
+.navbar .box {
   /* size */
-  width: 500px;
+  width: 1280px;
   height: 60px;
   /* position */
   display: flex;
@@ -65,262 +80,159 @@ body#profil {
 .navbar .navbar_title a {
   text-transform: uppercase;
   text-decoration: none;
-  color :white;
-  font-family: var(--text);
+  color: black;
+  font-family: var(--text2);
   font-size: 25px;
 }
 
-.filter {
-  /* On inverse la couleur qui est du noir de base */
-  filter: invert(100%);
+.navbar .navbar_title.home-icon {
+  margin-top: 10px;
 }
 
 /* MAIN */
-main,
-section {
-  margin-top: 200px;
-}
-
-/* HOME
-main .home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-} */
 
 /* home */
 main {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 150px;
 }
 
-/* img profil */
+/* img */
 main .home img {
   width: var(--profil-img-size);
   height: var(--profil-img-size);
   max-width: var(--profil-img-size);
   max-height: var(--profil-img-size);
-  /* border-radius: 90%; */
 }
 
 /* name */
 main .name {
-  font-family: var(--sara); 
+  max-height: 150px;
+  font-family: var(--sara);
   font-weight: 400;
   color: var(--black);
   font-size: 150px;
 }
 
-/* GENERAL */
+/* description */
+#home .me {
+  max-width: 380px;
+  height: auto;
+  font-family: var(--text2);
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: left;
+}
 
-/* sections */
-section {
+#home .me p {
+  margin-left: 100px;
+}
+
+/* PROFIL */
+/* skills */
+#skills {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
-  margin-right: 16px;
-  margin-left: 16px;
 }
-
-/* titles margin*/
-section .title-section {
-  margin-bottom: 50px;
-}
-
-/* titles text */
-section .title-section span {
-  font-family: var(--text);
-  line-height: 1.8;
-  font-size: 25px;
-  text-align: justify;
+/* skills title */
+#skills h2 {
+  font-family: var(--text2);
+  font-size: 30px;
+  font-weight: normal;
   text-decoration: underline;
 }
-
-/* buttons */
-button {
-  outline: none !important;
-  border: none;
-  background: 0 0;
+/* skills img */
+#skills img {
+  width: 900px;
+  margin-bottom: 30px;
 }
 
-/* PROFIL - SECTION 1 */
-
-/* description */
-#profil .me {
-  max-width: 800px;
-  height: auto;
-  font-family: var(--text);
-  font-size: 22px;
-  line-height: 1.8;
-  text-align: justify;
-}
-
-/* SKILLS - SECTION 2 */
-
-/* box */
-#skills .container {
-  max-width: 800px;
+/* xp */
+#xp {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 70px;
-}
-
-/* cards */
-#skills .card {
-  width: 200px;
-  height: 250px;
-  background-color: var(--grey);
-  border-radius: 50px;
-  display: flex;
+  align-items: center;
   flex-direction: column;
 }
-
-/* title cards */
-#skills .container .card .title-card {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* xp title */
+#xp h2 {
+  font-family: var(--text2);
+  font-size: 30px;
+  font-weight: normal;
+  text-decoration: underline;
+  margin-bottom: 30px;
 }
 
-/* title cards */
-#skills .container .card .title-card span {
-  font-family: var(--text);
+/* xp texte */
+#xp div {
+  max-width: 525px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+#xp div p {
+  font-family: var(--text2);
   font-size: 22px;
+  font-weight: normal;
+  text-align: left;
+  line-height: 2;
 }
 
-/* img cards */
-#skills .container .card .logo-card {
-  flex: 2;
+#xp div span {
+  background-color: var(--fushia);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: block;
+}
+
+/* CONTACT */
+#contact {
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-}
-
-/* XP - SECTION 3 */
-
-/* container xp */
-#xp .page {
-  max-width: 800px;
-  display: flex;
+  align-items: center;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0px;
+  margin-top: 250px;
 }
 
-/* box xp */
-#xp .page .box {
-  display: flex;
-  width: 100%;
+#contact h2 {
+  font-family: var(--text2);
+  font-size: 30px;
+  font-weight: normal;
+  text-decoration: underline;
+  margin-bottom: 70px;
 }
 
-/* font style */
-#xp .page .box .box1 {
-  font-size: 22px;
-  font-family: var(--text);
-  text-align: justify;
-  text-justify: inter-word;
+#contact .box input{
+width: 900px;
+height: 60px;
+margin-bottom: 30px;
+padding: 15px;
+background-color: var(--pink);
+border: none;
+border-radius: 30px;
 }
 
-/* box/box */
-/* position */
-#xp .page .box .box1,
-#xp .page .box .box3 {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
+#contact .box .button{
+width: 100%;
+height: 60px;
+display:flex;
+justify-content: center;
 }
 
-#xp .page .box .box2 {
-  flex: 0.25;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
-
-#xp .page .box .box2 .line {
-  width: 3px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #000;
-}
-
-/* box isolation */
-#xp .page .box:nth-child(even) {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-/* text box align */
-#xp .page .box:nth-child(odd) .box1 {
-  display: flex;
-  flex-direction: row-reverse;
-  text-align: end;
-}
-
-/* CONTACT - SECTION 4 */
-
-#contact .container {
-  display: flex;
-  flex-direction: row;
-}
-
-/* img msg */
-#contact .container .img {
-}
-
-/* box */
-#contact .container .box {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* input */
-#contact .container .box div input,
-#contact .container .box div textarea {
-  width: 100%;
-  padding: 10px;
-}
-
-/* button */
-#contact .container .box .button {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-#contact .container .box .button .contact1-form-btn {
-  min-width: 120px;
-  height: 40px;
-  width: 50px;
-  border-radius: 25px;
-  background: var(--beige);
-  font-family: var(--text);
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--black);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  transition: all 0.4s;
-}
-
-#contact .container .box .button .contact1-form-btn img {
-  margin-left: 3px;
-}
-
-/* button cursor */
-#contact .container .box .button .contact1-form-btn:hover {
-  cursor: pointer;
+#contact .box .button button{
+background-color: var(--pink);
+max-width: 150px;
+width: 100%;
+height: 100%;
+border: none;
+border-radius: 30px;
 }
