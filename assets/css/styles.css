@@ -1,238 +1,120 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+:root {
+  --primary: #F5F5EF;
+  --details: #E1EADB;
+  
+  /* Burger customisation */
+  --burger: #000000;
+  --burger-height: 30px;
+  --burger-width: 50px;
+  --burger-spacing-top: 50px;
+  --burger-spacing-left: 50px;
+  --burger-spacing: 3px;
+  --burger-transition-duration: 0.85s;
+  --navigation-animation-duration: 325ms;
+  --navigation-background-opacity: 0.75;
 }
 
-/* VAR */
-:root {
-  /* colors */
-  --grey: #e4dfd7;
-  --beige: #f0ddc5;
-  --black: #000;
-  --pink: #f2d4bc;
-  --fushia: #ef447b;
-  --dark-pink: rgb(213 151 138);
-  --green: #f5f5ef;
-  --dark-green: #d7d4c7;
-  --black-green: rgb(43 63 61);
-  /* size */
-  --profil-img-size: 500px;
-  /* font */
-  --text: "Roboto Mono", monospace;
-  --text2: "Rajdhani", sans-serif;
-  --title: "Mrs Saint Delafield", cursive;
-  --sara: "Fleur De Leah", cursive;
-}
-/* margin */
-.first-element {
-  margin-top: 200px;
-}
-.end {
-  margin-bottom: 200px;
+* {
+  margin: 0;
 }
 
 body {
-  font-family: var(--text2);
+  /* font: ; */
+  background-color: var(--primary);
 }
 
-/* BG */
-body#homeBG {
-  background: center / cover no-repeat url("../img/home-background.svg");
-}
-body#profilBG {
-  background: center / cover no-repeat url("../img/profil-background.svg");
-}
-body#contactBG {
-  background: center / cover no-repeat url("../img/contact-background.svg");
+body.navigation-open {
+ overflow: hidden; 
 }
 
-/* NAVBAR */
-.navbar {
-  /* size */
-  width: 100%;
-  height: 70px;
-  /* bg */
-  background-color: var(--pink);
-  /* position */
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+section {
+  height: 100vh;
+}
+
+section#home {
+  background: center / cover no-repeat url("../img/MacBook_Air_on_the_white_desk_logov2.png");
+}
+
+.burger {
+  background: transparent;
+  z-index: 4;
+  position: absolute;
+  top: var(--burger-spacing-top);
+  left: var(--burger-spacing-left);
+  height: var(--burger-height);
+  width: var(--burger-width);
+}
+
+.burger:hover {
+  cursor: pointer;
+}
+
+.burger:before, .burger:after {
+  background: var(--burger);
+  backface-visibility: hidden;
+  content: "";
+  height: var(--burger-spacing);
+  left: 0;
+  transition: var(--burger-transition-duration);
+  width: var(--burger-width);
+}
+
+.burger:before {
+  box-shadow: var(--burger) 0 14px 0 0;
+  position: absolute;
   top: 0;
-  position: fixed;
 }
 
-/* box */
-.navbar .box {
-  /* size */
-  width: 1280px;
-  height: 60px;
-  /* position */
-  display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: space-around;
+.burger:after {
+  position: absolute;
+  top: calc(100% - 2px);
 }
 
-/* uppercases */
-.navbar .navbar_title a {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: black;
-  font-family: var(--text2);
-  font-size: 25px;
+.burger.active:before {
+  box-shadow: transparent 0 0 0 0;
+  top: 50%;
+  transform: rotate(225deg);
 }
 
-.navbar .navbar_title.home-icon {
-  margin-top: 10px;
+.burger.active:after {
+  top: 50%;
+  transform: rotate(315deg);
 }
 
-/* MAIN */
-
-/* home */
-main {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 150px;
+.navigation {
+  display: none;
+  opacity: var(--navigation-background-opacity);
+  position: absolute;
+  height: 100vh;
+  width: 0;
+  background-color: var(--primary);
 }
 
-/* img */
-main .home img {
-  width: var(--profil-img-size);
-  height: var(--profil-img-size);
-  max-width: var(--profil-img-size);
-  max-height: var(--profil-img-size);
-}
-
-/* name */
-main .name {
-  max-height: 150px;
-  font-family: var(--sara);
-  font-weight: 400;
-  color: var(--black);
-  font-size: 150px;
-}
-
-/* description */
-#home .me {
-  max-width: 380px;
-  height: auto;
-  font-family: var(--text2);
-  font-size: 22px;
-  line-height: 1.2;
-  text-align: left;
-}
-
-#home .me p {
-  margin-left: 100px;
-}
-
-/* PROFIL */
-/* skills */
-#skills {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-/* skills title */
-#skills h2 {
-  font-family: var(--text2);
-  font-size: 30px;
-  font-weight: normal;
-  text-decoration: underline;
-}
-/* skills img */
-#skills img {
-  width: 900px;
-  margin-bottom: 30px;
-}
-
-/* xp */
-#xp {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-/* xp title */
-#xp h2 {
-  font-family: var(--text2);
-  font-size: 30px;
-  font-weight: normal;
-  text-decoration: underline;
-  margin-bottom: 30px;
-}
-
-/* xp texte */
-#xp div {
-  max-width: 525px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  justify-content: flex-start;
-}
-
-#xp div p {
-  font-family: var(--text2);
-  font-size: 22px;
-  font-weight: normal;
-  text-align: left;
-  line-height: 2;
-}
-
-#xp div span {
-  background-color: var(--fushia);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+.navigation.active {
   display: block;
+  animation: showNavigation ease-in var(--navigation-animation-duration) forwards;
 }
 
-/* CONTACT */
-#contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 250px;
+.navigation.hidden {
+  display: block;
+  animation: hideNavigation ease-in-out var(--navigation-animation-duration) forwards;
 }
 
-#contact h2 {
-  font-family: var(--text2);
-  font-size: 30px;
-  font-weight: normal;
-  text-decoration: underline;
-  margin-bottom: 70px;
+@keyframes showNavigation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100vw;
+  }
 }
 
-#contact .box input{
-width: 900px;
-height: 60px;
-margin-bottom: 30px;
-padding: 15px;
-background-color: var(--pink);
-border: none;
-border-radius: 30px;
-}
-
-#contact .box .button{
-width: 100%;
-height: 60px;
-display:flex;
-justify-content: center;
-}
-
-#contact .box .button button{
-background-color: var(--pink);
-max-width: 150px;
-width: 100%;
-height: 100%;
-border: none;
-border-radius: 30px;
+@keyframes hideNavigation {
+  0% {
+    width: 100vw;
+  }
+  100% {
+    width: 0;
+    display: none;
+  }
 }
