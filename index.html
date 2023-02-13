@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <!-- HEAD -->
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -30,27 +29,26 @@
       rel="stylesheet"
     />
   </head>
-
   <body>
+    <div class="navigation">
+      <div class="links">
+        <div class="link home">
+          <a href="#"><img src="./assets/img/navbar/home.svg" /></a>
+        </div>
+        <div class="link profil">
+          <a href="#">profil</a>
+        </div>
+        <div class="link projects">
+          <a href="">projects</a>
+        </div>
+        <div class="link contact">
+          <a href="#">contact</a>
+        </div>
+      </div>
+    </div>
     <section id="home">
       <nav>
         <div class="burger"></div>
-        <div class="navigation">
-          <div class="links">
-            <div class="link home">
-              <a href="#"><img src="./assets/img/navbar/home.svg" /></a>
-            </div>
-            <div class="link profil">
-              <a href="#">profil</a>
-            </div>
-            <div class="link projects">
-              <a href="">projects</a>
-            </div>
-            <div class="link contact">
-              <a href="#">contact</a>
-            </div>
-          </div>
-        </div>
       </nav>
     </section>
     <section id="projects">
@@ -100,7 +98,9 @@
     </section>
     <footer>
       <div class="email">
-        <span>saramelais57@gmail.com</span>
+        <div class="mailto">
+          <a href="mailto:saramelais57@gmail.com" target="_blank">saramelais57@gmail.com</a>
+        </div>
       </div>
       <div class="logo">
         <img src="./assets/img/logo.svg"/>
@@ -111,7 +111,6 @@
         <a href=""><img width="70" height="70" class="github" src="./assets/img/github.svg"/></a>
       </div>
     </footer>
-
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

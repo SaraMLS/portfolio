@@ -11,8 +11,26 @@
   --burger-spacing: 3px;
   --burger-transition-duration: 0.85s;
   --navigation-animation-duration: 275ms;
-  --navigation-background-opacity: 0.9;
+  --navigation-background-opacity: 1;
 }
+
+/* ::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  background-color: rebeccapurple;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+} */
 
 * {
   margin: 0;
@@ -22,7 +40,7 @@
 body {
   font-family: "Space Mono", monospace;
   background-color: var(--primary);
-  transition: background .4s ease-in;
+  transition: background 0.4s ease-in;
 }
 
 body.navigation-open {
@@ -51,8 +69,8 @@ nav.scrolled {
 
 .burger {
   background: transparent;
-  z-index: 4;
-  position: relative;
+  z-index: 9;
+  position: fixed;
   top: var(--burger-spacing-top);
   left: var(--burger-spacing-left);
   height: var(--burger-height);
@@ -86,7 +104,12 @@ nav.scrolled {
   top: calc(100% - 2px);
 }
 
+.burger.active {
+  z-index: 9;
+}
+
 .burger.active:before {
+  /* z-index: 9; */
   box-shadow: transparent 0 0 0 0;
   top: 50%;
   transform: rotate(225deg);
@@ -97,25 +120,13 @@ nav.scrolled {
   transform: rotate(315deg);
 }
 
-.burger.scrolled {
-  animation: scrolled ease-in 380ms forwards;
-}
-
-@keyframes scrolled {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(300px);
-  }
-}
-
 .navigation {
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: var(--navigation-background-opacity);
   position: fixed;
+  z-index: 4;
   height: 100vh;
   top: 0;
   width: 100vw;
@@ -155,6 +166,11 @@ nav.scrolled {
   text-decoration: none;
 }
 
+.navigation .links .home a img {
+  width: 60px;
+  height: 60px;
+}
+
 @keyframes showNavigation {
   0% {
     margin-left: -200%;
@@ -173,7 +189,7 @@ nav.scrolled {
   }
 }
 
-input[type=radio] {
+input[type="radio"] {
   display: none;
 }
 
@@ -214,25 +230,33 @@ img {
   object-fit: cover;
 }
 
-#item-1:checked ~ .cards #song-3, #item-2:checked ~ .cards #song-1, #item-3:checked ~ .cards #song-2 {
+#item-1:checked ~ .cards #song-3,
+#item-2:checked ~ .cards #song-1,
+#item-3:checked ~ .cards #song-2 {
   transform: translatex(-40%) scale(0.8);
   opacity: 0.4;
   z-index: 0;
 }
 
-#item-1:checked ~ .cards #song-2, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1 {
+#item-1:checked ~ .cards #song-2,
+#item-2:checked ~ .cards #song-3,
+#item-3:checked ~ .cards #song-1 {
   transform: translatex(40%) scale(0.8);
   opacity: 0.4;
   z-index: 0;
 }
 
-#item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 {
+#item-1:checked ~ .cards #song-1,
+#item-2:checked ~ .cards #song-2,
+#item-3:checked ~ .cards #song-3 {
   transform: translatex(0) scale(1);
   opacity: 1;
   z-index: 1;
 }
 
-#item-1:checked ~ .cards #song-1 img, #item-2:checked ~ .cards #song-2 img, #item-3:checked ~ .cards #song-3 img {
+#item-1:checked ~ .cards #song-1 img,
+#item-2:checked ~ .cards #song-2 img,
+#item-3:checked ~ .cards #song-3 img {
   box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
 }
 
@@ -259,7 +283,8 @@ img {
   width: 100%;
 }
 
-.subtitle, .time {
+.subtitle,
+.time {
   font-size: 12px;
   line-height: 16px;
   color: #c6c5c6;
@@ -311,23 +336,42 @@ footer div {
 }
 
 footer .email {
-  font-family: 'Space Mono';
+  font-family: "Space Mono";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
-  text-align: center;
   margin-left: 24px;
+  display: flex;
+}
+
+footer .email .mailto {
+  margin-top: 20px;
+}
+
+footer .email .mailto a {
+  text-decoration: none;
+  color: inherit;
 }
 
 footer .logo {
+  flex: 1.5;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin-top: -25px;
 }
 
 footer .logo img {
-  /* max-width: 480px; */
+  max-width: 450px;
+  max-height: 200px;
+}
+
+footer .socials {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 footer .socials a .linkedin {

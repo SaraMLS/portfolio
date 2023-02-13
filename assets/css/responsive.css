@@ -1,95 +1,25 @@
-@media screen and (max-width: 400px) {
-  :root {
-    /* --profil-img-size: 250px; */
-  }
-
-  .first-element {
-    margin-top: 100px;
-  }
-
-  main .name {
-    font-size: 80px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-
-  main .home img {
-    width: 300px;
-    height: 300px;
-    /* margin-bottom: 40px; */
-  }
-
-  #home .me {
-    max-width: 330px;
-    font-size: 18px;
-    line-height: 1.2;
-    text-align: left;
-  }
-
-  #home .me p {
-    margin-left: 0px;
-    margin-bottom: 40px;
-  }
-
-  main {
-    margin-top: 120px;
-    flex-direction: column;
-    gap: 0px;
-  }
-
-}
-
 @media screen and (max-width: 1080px) {
-  :root {
-    --profil-img-size: 400px;
-  }
-
-  .first-element {
-    margin-top: 120px;
-  }
-
-  main .name {
-    font-size: 120px;
-      }
-
-  main .home img {
-    width: 300px;
-    height: 300px;
-    /* margin-bottom: 40px; */
-  }
-
-  #home .me {
-    max-width: 330px;
-    font-size: 18px;
-    line-height: 1.2;
-    text-align: left;
-  }
-
-  #home .me p {
-     margin-bottom: 40px;
-  }
-
-  main {
-    margin-top: 120px;
-    flex-direction: column;
-    gap: 0px;
-  }
 
   footer {
     flex-direction: column;
-    /* gap: 20px; */
+    text-align: center;
   }
 
   footer div {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center!important;
+    gap: 12px;
+    flex: 1!important;
   }
-  
+
   footer .logo {
     flex-direction: column;
-    margin-bottom: 20px;
+    margin: 20px 0;
+  }
+
+  footer .socials {
+    gap: 5%;
   }
   
 }
