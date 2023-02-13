@@ -75,5 +75,21 @@
     flex-direction: column;
     gap: 0px;
   }
+
+  footer {
+    flex-direction: column;
+    /* gap: 20px; */
+  }
+
+  footer div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  footer .logo {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
   
 }
