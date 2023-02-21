@@ -1,5 +1,13 @@
 @media screen and (max-width: 1080px) {
 
+  section#profil .profil {
+    flex-direction: column;
+  }
+
+  #profil .profil .right {
+    display: none;
+  }
+
   footer {
     flex-direction: column;
     text-align: center;
@@ -22,4 +30,10 @@
     gap: 5%;
   }
   
+}
+
+@media screen and (max-width: 600px) {
+  #profil .profil .left .me {
+    flex-direction: column;
+  }
 }

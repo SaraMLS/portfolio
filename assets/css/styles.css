@@ -1,6 +1,7 @@
 :root {
   --primary: #f5f5ef;
   --details: #e1eadb;
+  --menu: #114232;
 
   /* Burger customisation */
   --burger: #000000;
@@ -14,29 +15,12 @@
   --navigation-background-opacity: 1;
 }
 
-/* ::-webkit-scrollbar {
-  width: 4px;
-  background-color: transparent;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: transparent;
-  background-color: rebeccapurple;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: transparent;
-} */
-
 * {
   margin: 0;
   padding: 0;
 }
 
+/* BODY */
 body {
   font-family: "Space Mono", monospace;
   background-color: var(--primary);
@@ -48,24 +32,23 @@ body.navigation-open {
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 section#home {
-  background: center / cover no-repeat
-    url("../img/MacBook_Air_on_the_white_desk_logov2.png");
+  background: center / cover no-repeat url("../img/bg.svg");
 }
 
-nav {
+/* nav {
   position: absolute;
   top: 0;
   width: 100%;
-}
-
+} */
+/* 
 nav.scrolled {
   position: fixed;
   top: -300px;
-}
+} */
 
 .burger {
   background: transparent;
@@ -120,6 +103,20 @@ nav.scrolled {
   transform: rotate(315deg);
 }
 
+/* .navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: var(--navigation-background-opacity);
+  position: fixed;
+  z-index: 4;
+  height: 100vh;
+  top: 0;
+  width: 100vw;
+  margin-left: -200%;
+  background-color: var(--primary);
+} */
+
 .navigation {
   display: flex;
   align-items: center;
@@ -130,6 +127,7 @@ nav.scrolled {
   height: 100vh;
   top: 0;
   width: 100vw;
+  width: 20vw;
   margin-left: -200%;
   background-color: var(--primary);
 }
@@ -189,6 +187,8 @@ nav.scrolled {
   }
 }
 
+/* HOME */
+/* Caroussel */
 input[type="radio"] {
   display: none;
 }
@@ -205,10 +205,10 @@ input[type="radio"] {
 }
 
 .container {
-  width: 100%;
+  width: 60%;
   max-width: 800px;
   max-height: 600px;
-  height: 100%;
+  height: 80%;
   transform-style: preserve-3d;
   display: flex;
   justify-content: center;
@@ -257,75 +257,87 @@ img {
 #item-1:checked ~ .cards #song-1 img,
 #item-2:checked ~ .cards #song-2 img,
 #item-3:checked ~ .cards #song-3 img {
-  box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
-}
-
-.player {
-  margin-top: 25px;
-  background-color: #fff;
-  border-radius: 8px;
-  min-width: 320px;
-  padding: 16px 10px;
-}
-
-.upper-part {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-  height: 36px;
-  overflow: hidden;
-}
-
-.sub-line {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.subtitle,
-.time {
-  font-size: 12px;
-  line-height: 16px;
-  color: #c6c5c6;
-}
-
-.time {
-  font-size: 12px;
-  line-height: 16px;
-  color: #a5a5a5;
-  font-weight: 500;
-  margin-left: auto;
-}
-
-.info-area {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 30px;
-  transition: transform 0.4s ease-in;
-}
-
-#item-2:checked ~ .player #test {
-  transform: translateY(0);
-}
-
-#item-2:checked ~ .player #test {
-  transform: translateY(-40px);
-}
-
-#item-3:checked ~ .player #test {
-  transform: translateY(-80px);
+  box-shadow: 0px 0px 10px 0px rgba(81, 81, 81, 0.47);
 }
 
 section#projects {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 30px;
 }
 
+/* PROFIL */
+section#profil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+section#profil .profil {
+ max-width: 85vw;
+ display: flex;
+}
+
+#profil .profil .right {
+  flex: 2;
+}
+
+#profil .profil .right img {
+  object-fit: contain;
+}
+
+#profil .profil .left {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+#profil .profil .left .me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 50px;
+}
+
+#profil .profil .left .me span {
+  max-width: 40%;
+}
+
+#profil .profil .left .me img {
+  max-width: 300px;
+}
+
+#profil .profil .left .xp {
+  text-align: center;
+  font-size: 14px;
+  background-color: var(--details);
+  border-style: dotted;
+  border-width: 1.5em;
+  border-color: var(--details);
+  box-shadow: -100px 80px 1px var(--primary);
+}
+
+#profil .profil .left .xp {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#profil .profil .left .xp .title {
+  text-align: center;
+  font-size: 18px;
+  color: black;
+}
+
+/* FOOTER */
 footer {
-  min-height: 300px;
+  min-height: 140px;
   background-color: #fff;
   display: flex;
 }
@@ -339,14 +351,14 @@ footer .email {
   font-family: "Space Mono";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   margin-left: 24px;
   display: flex;
 }
 
 footer .email .mailto {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 footer .email .mailto a {
@@ -360,12 +372,17 @@ footer .logo {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: -25px;
 }
 
 footer .logo img {
-  max-width: 450px;
-  max-height: 200px;
+  max-width: 350px;
+  max-height: 100px;
+  object-fit: contain;
+}
+
+footer .logo span {
+  margin-bottom: 10px;
+  font-size: 11px;
 }
 
 footer .socials {
@@ -375,11 +392,11 @@ footer .socials {
 }
 
 footer .socials a .linkedin {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
 }
 
 footer .socials a .github {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
 }
