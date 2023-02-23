@@ -33,22 +33,12 @@ body.navigation-open {
 
 section {
   min-height: 100vh;
+  height: 100vh;
 }
 
 section#home {
   background: center / cover no-repeat url("../img/bg.svg");
 }
-
-/* nav {
-  position: absolute;
-  top: 0;
-  width: 100%;
-} */
-/* 
-nav.scrolled {
-  position: fixed;
-  top: -300px;
-} */
 
 .burger {
   background: transparent;
@@ -70,6 +60,7 @@ nav.scrolled {
   background: var(--burger);
   backface-visibility: hidden;
   content: "";
+  mix-blend-mode: difference;
   height: var(--burger-spacing);
   left: 0;
   transition: var(--burger-transition-duration);
@@ -102,20 +93,6 @@ nav.scrolled {
   top: 50%;
   transform: rotate(315deg);
 }
-
-/* .navigation {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: var(--navigation-background-opacity);
-  position: fixed;
-  z-index: 4;
-  height: 100vh;
-  top: 0;
-  width: 100vw;
-  margin-left: -200%;
-  background-color: var(--primary);
-} */
 
 .navigation {
   display: flex;
@@ -185,6 +162,31 @@ nav.scrolled {
   100% {
     margin-left: -200%;
   }
+}
+
+/* LOGOS */
+
+.icons {
+  height: auto;
+  width: auto;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  position: fixed;
+  gap: 10px;
+}
+
+.icons a {
+  max-height: 40px;
+}
+
+.icons img, .icons a {
+  height: 35px;
+  width: 35px;
+  opacity: 0.70
+  ;
 }
 
 /* HOME */
@@ -260,7 +262,7 @@ img {
   box-shadow: 0px 0px 10px 0px rgba(81, 81, 81, 0.47);
 }
 
-section#projects {
+section#view-projects {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -269,6 +271,9 @@ section#projects {
 
 /* PROFIL */
 section#profil {
+  min-height: auto;
+  height: 97vh;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -276,7 +281,7 @@ section#profil {
 }
 
 section#profil .profil {
- max-width: 85vw;
+ max-width: 80vw;
  display: flex;
 }
 
@@ -335,68 +340,156 @@ section#profil .profil {
   color: black;
 }
 
+/* section#project{ */
+.carousel {
+  position: relative;
+  z-index: 1;
+  height: 97vh;
+  overflow: hidden;
+  pointer-events: none;
+}
+.carousel-item {
+  --items: 10;
+  --width: clamp(150px, 30vw, 300px);
+  --height: clamp(200px, 40vw, 400px);
+  --x: calc(var(--active) * 800%);
+  --y: calc(var(--active) * 200%);
+  --rot: calc(var(--active) * 120deg);
+  --opacity: calc(var(--zIndex) / var(--items) * 3 - 2);
+  overflow: hidden;
+  position: absolute;
+  z-index: var(--zIndex);
+  width: var(--width);
+  height: var(--height);
+  margin: calc(var(--height) * -0.5) 0 0 calc(var(--width) * -0.5);
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  user-select: none;
+  transform-origin: 0% 100%;
+  box-shadow: 0 10px 50px 10px rgba(0, 0, 0, 0.5);
+  background: black;
+  pointer-events: all;
+  transform: translate(var(--x), var(--y)) rotate(var(--rot));
+  transition: transform 0.8s cubic-bezier(0, 0.02, 0, 1);
+}
+.carousel-item .carousel-box {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+  opacity: var(--opacity);
+  font-family: "Orelo-sw-db", serif;
+}
+/* .carousel-item .carousel-box:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .5));
+ } */
+.carousel-item .title {
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  bottom: 20px;
+  left: 20px;
+  transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+  font-size: clamp(20px, 3vw, 30px);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+.carousel-item .num {
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  top: 10px;
+  left: 20px;
+  transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+  font-size: clamp(20px, 10vw, 80px);
+}
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* right text */
+.layout {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.layout:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 90px;
+  width: 10px;
+  height: 100%;
+  border: 1px solid #fff;
+  border-top: none;
+  border-bottom: none;
+  opacity: 0.15;
+}
+.layout .box {
+  position: absolute;
+  bottom: -100px;
+  left: 30px;
+  transform-origin: 0% 10%;
+  transform: rotate(-90deg);
+  font-size: 100px;
+}
+.cursor {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: 1px solid var(--menu);
+  margin: calc(var(--size) * -0.5) 0 0 calc(var(--size) * -0.5);
+  transition: transform 0.85s cubic-bezier(0, 0.02, 0, 1);
+  display: none;
+  pointer-events: none;
+}
+@media (pointer: fine) {
+  .cursor {
+    display: block;
+  }
+}
+.cursor2 {
+  --size: 2px;
+  transition-duration: 0.7s;
+}
+
 /* FOOTER */
 footer {
-  min-height: 140px;
-  background-color: #fff;
+  min-height: 3vh;
+  background-color: transparent;
   display: flex;
-}
-
-footer div {
-  margin: 0 24px;
-  flex: 1;
-}
-
-footer .email {
+  align-items: center;
+  justify-content: center;
   font-family: "Space Mono";
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  margin-left: 24px;
-  display: flex;
-}
-
-footer .email .mailto {
-  margin-top: 10px;
-}
-
-footer .email .mailto a {
-  text-decoration: none;
-  color: inherit;
-}
-
-footer .logo {
-  flex: 1.5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-footer .logo img {
-  max-width: 350px;
-  max-height: 100px;
-  object-fit: contain;
-}
-
-footer .logo span {
-  margin-bottom: 10px;
   font-size: 11px;
 }
 
-footer .socials {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-footer .socials a .linkedin {
-  width: 50px;
-  height: 50px;
-}
-
-footer .socials a .github {
-  width: 40px;
-  height: 40px;
+footer a {
+  text-decoration: none;
+  color: inherit;
 }
