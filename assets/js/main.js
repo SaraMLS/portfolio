@@ -14,6 +14,9 @@ burger.addEventListener("click", () => {
 	}
 })
 
+
+// PROJECTS
+// <!-- #Fabio Ottaviani / @supah / codepen -->
 /*--------------------
 Vars
 --------------------*/

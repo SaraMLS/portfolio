@@ -31,15 +31,18 @@ body.navigation-open {
   overflow: hidden;
 }
 
+/* SECTION */
 section {
   min-height: 100vh;
   height: 100vh;
 }
 
+/* HOME */
 section#home {
   background: center / cover no-repeat url("../img/bg.svg");
 }
 
+/* BURGER */
 .burger {
   background: transparent;
   z-index: 9;
@@ -51,8 +54,9 @@ section#home {
   transition: all 0.3s ease-in-out;
 }
 
+/* cursor */
 .burger:hover {
-  cursor: pointer;
+  cursor: none;
 }
 
 .burger:before,
@@ -94,6 +98,7 @@ section#home {
   transform: rotate(315deg);
 }
 
+/* NAV */
 .navigation {
   display: flex;
   align-items: center;
@@ -165,7 +170,6 @@ section#home {
 }
 
 /* LOGOS */
-
 .icons {
   height: auto;
   width: auto;
@@ -178,19 +182,74 @@ section#home {
   gap: 10px;
 }
 
+/* anim */
+.icons *:hover {
+  opacity: 1;
+  cursor: none;
+}
+
+/* size */
 .icons a {
   max-height: 40px;
 }
 
-.icons img, .icons a {
+.icons img,
+.icons a {
+  height: 35px;NN
+  width: 35px;
+  opacity: 0.7;
+}
+
+.icons .theme {
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.icons .theme img {
+  margin-right: 10px;
+}
+
+.icons .theme .colors {
+  height: 35px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+}
+.icons .theme .colors .circle {
   height: 35px;
   width: 35px;
-  opacity: 0.70
-  ;
+  border-radius: 50%;
+}
+
+.icons .theme .colors .color1 {
+  background-color: purple;
+}
+
+.icons .theme .colors .color2 {
+  background-color: greenyellow;
+}
+
+.icons .theme .colors .color3 {
+  background-color: skyblue;
+}
+
+.icons .theme .colors .color4 {
+  background-color: lightsalmon;
+}
+
+.icons .theme .colors .color5 {
+  background-color: linen;
 }
 
 /* HOME */
-/* Caroussel */
+/* caroussel */
 input[type="radio"] {
   display: none;
 }
@@ -281,8 +340,8 @@ section#profil {
 }
 
 section#profil .profil {
- max-width: 80vw;
- display: flex;
+  max-width: 80vw;
+  display: flex;
 }
 
 #profil .profil .right {
@@ -341,6 +400,7 @@ section#profil .profil {
 }
 
 /* section#project{ */
+/* <!-- #Fabio Ottaviani / @supah / codepen --> */
 .carousel {
   position: relative;
   z-index: 1;
