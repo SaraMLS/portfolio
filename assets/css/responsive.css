@@ -36,4 +36,10 @@
   #profil .profil .left .me {
     flex-direction: column;
   }
+  .navigation {
+    width: 100%;
+  }
+  body.navigation-open {
+    overflow: hidden;
+  }
 }

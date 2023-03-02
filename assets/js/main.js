@@ -14,6 +14,21 @@ burger.addEventListener("click", () => {
 	}
 })
 
+const colorPicker = document.querySelector(".logo");
+const themeContainer = document.querySelector(".theme");
+
+const toggle = (element, animation) => {
+  element.classList.remove(animation.o)
+  element.classList.add(animation.c)
+}
+
+colorPicker.addEventListener("mouseover", () => {
+  toggle(themeContainer, { o: "hidden", c: "active" })
+})
+
+themeContainer.addEventListener("mouseleave", () => {
+  toggle(themeContainer, { o: "active", c: "hidden" })
+})
 
 // PROJECTS
 // <!-- #Fabio Ottaviani / @supah / codepen -->
@@ -100,6 +115,23 @@ const handleMouseDown = e => {
 const handleMouseUp = () => {
   isDown = false
 }
+
+// const circleLinks = document.querySelectorAll('.link-circle')
+
+// circleLinks.forEach(l => {
+//   l.addEventListener('mouseenter', () => {
+//     l.classList.add('hovered')
+//     $cursors.forEach($cursor => {
+//       $cursor.classList.add('hidden')
+//     })
+//   })
+//   l.addEventListener('mouseleave', () => {
+//     l.classList.remove('hovered')
+//     $cursors.forEach($cursor => {
+//       $cursor.classList.remove('hidden')
+//     })
+//   })
+// })
 
 /*--------------------
 Listeners
