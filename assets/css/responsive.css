@@ -1,13 +1,4 @@
 @media screen and (max-width: 1080px) {
-
-  section#profil .profil {
-    flex-direction: column;
-  }
-
-  #profil .profil .right {
-    display: none;
-  }
-
   footer {
     flex-direction: column;
     text-align: center;
@@ -32,10 +23,10 @@
   
 }
 
-@media screen and (max-width: 600px) {
-  #profil .profil .left .me {
-    flex-direction: column;
+@media screen and (max-width: 1280px) {
   }
+
+@media screen and (max-width: 600px) {
   .navigation {
     width: 100%;
   }

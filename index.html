@@ -23,6 +23,8 @@
       href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Roboto+Mono:wght@100;300;400&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Rampart+One&display=swap" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap"
       rel="stylesheet"
@@ -37,12 +39,12 @@
     />
   </head>
   <!-- BODY -->
-  <body>
+  <body class="light">
     <!-- NAV -->
     <div class="navigation">
       <div class="links">
         <div class="link home">
-          <a href="index.html"><img src="./assets/img/navbar/home.svg" /></a>
+          <a href="index.html">accueil</a>
         </div>
         <div class="link profil">
           <a href="profil.html">profil</a>
@@ -62,13 +64,6 @@
     <div class="icons">
       <div class="theme">
         <img class="logo" src="./assets/img/icons/logo.svg" />
-        <div class="colors">
-          <div class="circle color1"></div>
-          <div class="circle color2"></div>
-          <div class="circle color3"></div>
-          <div class="circle color4"></div>
-          <div class="circle color5"></div>
-        </div>
       </div>
       <a
         class="link-circle"
@@ -81,7 +76,18 @@
     </div>
 
     <!-- HOME -->
-    <section id="home"></section>
+    <section id="home">
+      <div class="home">
+        <div class="left">
+          <div id="name">MÉLAÏS Sara</div>
+          <div id="subtitle">Concepteur designer UI UX junior</div>
+          <div id="me">à la recherche d'une alternance</div>
+        </div>
+        <div class="right">
+          <img src="./assets/img/me.svg" alt="me" />
+        </div>
+      </div>
+    </section>
 
     <!-- PROJECTS -->
     <section id="view-projects">
@@ -90,16 +96,13 @@
         <input type="radio" name="slider" id="item-2" />
         <input type="radio" name="slider" id="item-3" />
         <div class="cards">
-          <label class="card" for="item-1" id="song-1"
-            >Titre 1
+          <label class="card" for="item-1" id="song-1">
             <img src="./assets/img/project/project1.png" alt="song" />
           </label>
-          <label class="card" for="item-2" id="song-2"
-            >Titre 2
+          <label class="card" for="item-2" id="song-2">
             <img src="./assets/img/project/project2.png" alt="song" />
           </label>
-          <label class="card" for="item-3" id="song-3"
-            >Titre 3
+          <label class="card" for="item-3" id="song-3">
             <img src="./assets/img/project/project3.png" alt="song" />
           </label>
         </div>
