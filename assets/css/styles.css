@@ -371,24 +371,18 @@ section#view-projects {
   background-color: var(--primary);
 }
 
-#profil .profil div {
+#profil .profil {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
-}
-
-#profil .profil .me {
-  margin-top: 150px;
-}
-
-#profil .profil .me div p {
-  height: auto;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: row;
-  width: 500px;
+  margin-right: 25px;
+  margin-left: 25px;
+  max-width: 720px;
+}
+
+#profil .profil div p {
+  height: auto;
   text-align: justify;
 }
 
@@ -466,6 +460,7 @@ section#view-projects {
   left: 20px;
   transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
   font-size: clamp(20px, 3vw, 30px);
+  color: black;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 
