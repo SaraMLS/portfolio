@@ -2,7 +2,7 @@
   --primary: #f2f2f2;
   --details: #d9d9d9;
   --menu: #96bfb7;
-  --cursor: #404040;
+  --cursor: #00bfa6;
   --color: black;
 
   /* Burger customisation */
@@ -16,6 +16,7 @@
   --navigation-animation-duration: 300ms;
   --navigation-background-opacity: 1;
 
+  /* Icons */
   --icons-invert: 0%;
 }
 
@@ -24,7 +25,7 @@ body.dark {
   --primary: #22263b;
   --details: #cba1bc;
   --menu: #7b044c;
-  --cursor: #cb0186;
+  /* --cursor: #00BFA6; */
   --color: white;
   --icons-invert: 100%;
 }
@@ -48,6 +49,13 @@ body {
 section {
   min-height: 100vh;
   height: 100vh;
+}
+
+/* H1 */
+h1 {
+  font-family: "Megrim", cursive;
+  font-size: 40px;
+  padding: 60px;
 }
 
 /* BURGER */
@@ -178,12 +186,13 @@ section {
   height: auto;
   width: auto;
   right: 20px;
-  top: 20px;
+  bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: end;
   position: fixed;
   gap: 10px;
+  z-index: 10;
 }
 
 /* anim */
@@ -199,8 +208,8 @@ section {
 
 .icons a,
 .icons .theme {
-  height: 35px;
-  width: 35px;
+  height: 25px;
+  width: 25px;
 }
 
 .icons img {
@@ -229,6 +238,10 @@ section {
   display: flex;
   align-items: center;
   gap: 60px;
+  background: url(../img/bg1.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 70%;
 }
 
 #home .home .left {
@@ -251,6 +264,7 @@ section {
 #home .home .left #subtitle,
 #home .home .left #me {
   font-size: 1.375vw;
+  background-color: #60b4a93a;
 }
 
 #home .home .right {
@@ -260,8 +274,9 @@ section {
 }
 
 #home .home .right img {
-  height: 400px;
-  width: 380px;
+  /* height: 400px;
+  width: 380px; */
+  max-width: fit-content;
   object-fit: contain;
 }
 
@@ -351,57 +366,45 @@ section#view-projects {
 
 /* PROFIL */
 #profil {
-  height: auto;
   display: flex;
   justify-content: center;
   background-color: var(--primary);
 }
 
-#profil .profil{
-  max-width: 80vw;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
 #profil .profil div {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 50px;
 }
 
-#profil .profil div h1 {
-  font-family: "Megrim", cursive;
-  font-size: 40px;
+#profil .profil .me {
+  margin-top: 150px;
 }
 
-#profil .profil div .img{
-  width: 50vw;
+#profil .profil .me div p {
   height: auto;
-  object-fit: contain;
-}
-
-#profil .profil .me div img{
-  width: 20vw;
-  object-fit: contain;
-}
-
-#profil .profil .me div{
-  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 50px;
+  width: 500px;
+  text-align: justify;
 }
 
-#profil .profil .me div p{
-  width: 320px;
-  text-align: justify;
+/* SKILLS */
+
+#skills .skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#skills .skills img {
+  width: 50vw;
+  height: auto;
+  object-fit: contain;
 }
 
 /* section#project{ */
@@ -409,18 +412,23 @@ section#view-projects {
 .carousel {
   position: relative;
   z-index: 1;
-  height: 97vh;
+  height: 100vh;
   overflow: hidden;
   pointer-events: none;
+  
 }
 .carousel-item {
-  --items: 10;
+  /* Carousel */
+  /* --items: 10; */
   --width: clamp(150px, 30vw, 300px);
   --height: clamp(200px, 40vw, 400px);
-  --x: calc(var(--active) * 800%);
-  --y: calc(var(--active) * 200%);
-  --rot: calc(var(--active) * 120deg);
-  --opacity: calc(var(--zIndex) / var(--items) * 3 - 2);
+  /* --x: calc(var(--active) * 800%);
+    --y: calc(var(--active) * 200%);
+    --rot: calc(var(--active) * 120deg); */
+  --x: calc(var(--active) * 400%);
+  --y: calc(var(--active) * 100%);
+  --rot: calc(var(--active) * 70deg);
+  /* --opacity: calc(var(--zIndex) / var(--items) * 3 - 2); */
   overflow: hidden;
   position: absolute;
   z-index: var(--zIndex);
@@ -433,7 +441,7 @@ section#view-projects {
   user-select: none;
   transform-origin: 0% 100%;
   box-shadow: 0 10px 50px 10px rgba(0, 0, 0, 0.5);
-  background: black;
+  /* background: black; */
   pointer-events: all;
   transform: translate(var(--x), var(--y)) rotate(var(--rot));
   transition: transform 0.8s cubic-bezier(0, 0.02, 0, 1);
@@ -454,22 +462,13 @@ section#view-projects {
 .carousel-item .title {
   position: absolute;
   z-index: 1;
-  color: #fff;
   bottom: 20px;
   left: 20px;
   transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
   font-size: clamp(20px, 3vw, 30px);
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
-.carousel-item .num {
-  position: absolute;
-  z-index: 1;
-  color: #fff;
-  top: 10px;
-  left: 20px;
-  transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
-  font-size: clamp(20px, 10vw, 80px);
-}
+
 .carousel-item img {
   width: 100%;
   height: 100%;
@@ -518,7 +517,7 @@ section#view-projects {
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
-  border: 1px solid var(--menu);
+  border: 1px solid var(--cursor);
   margin: calc(var(--size) * -0.5) 0 0 calc(var(--size) * -0.5);
   transition: transform 0.85s cubic-bezier(0, 0.02, 0, 1);
   pointer-events: none;
@@ -540,8 +539,7 @@ section#view-projects {
 
 /* FOOTER */
 footer {
-  min-height: 3vh;
-  background-color: transparent;
+  height: 3vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -549,6 +547,8 @@ footer {
   font-style: normal;
   font-weight: 400;
   font-size: 11px;
+  margin-top: -3vh;
+
 }
 
 footer a {

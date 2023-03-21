@@ -16,11 +16,25 @@ burger.addEventListener("click", () => {
 
 // THEME
 
-const themeButton = document.querySelector(".logo")
+const themeButton = document.querySelector(".logo");
 
-themeButton.addEventListener("click", () => {
+const toggleTheme = () => {
   document.body.classList.toggle("dark")
   themeButton.classList.toggle("active")
+  localStorage.removeItem("theme")
+  if (document.body.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark")
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("theme") === "dark") {
+    toggleTheme();
+  }
+})
+
+themeButton.addEventListener("click", () => {
+  toggleTheme();
 })
 
 
