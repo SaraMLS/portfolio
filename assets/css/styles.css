@@ -261,12 +261,6 @@ h1 {
   letter-spacing: 4px;
 }
 
-#home .home .left #subtitle,
-#home .home .left #me {
-  font-size: 1.375vw;
-  background-color: #60b4a93a;
-}
-
 #home .home .right {
   height: 100%;
   display: flex;
