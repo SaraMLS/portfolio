@@ -213,7 +213,7 @@ h1 {
 }
 
 .icons img {
-  opacity: 0.7;
+  opacity: 0.35;
   filter: invert(var(--icons-invert));
 }
 
